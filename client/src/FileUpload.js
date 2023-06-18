@@ -6,6 +6,7 @@ import styles from './FileUpload.module.css'; // Import CSS module
 const FileUpload = () => {
   const [file, setFile] = useState('');
   const [output, setOutput] = useState('');
+  const [deText, setDeText] = useState('')
   const [loading, setLoading] = useState(false);
 
   const submitFile = async (event) => {
@@ -25,19 +26,22 @@ const FileUpload = () => {
       alert("File Upload success");
       setLoading(false);
       setOutput(response.data.data);
+      setDeText(response.data.text)
     } catch (error) {
       console.error(error);
       alert("File Upload Error");
     }
   };
-
+const logo = "p{ai}tient file reader"
   return (
   <div className={styles.container}>
+    <h1 className={styles.bruh}>{logo}</h1>
     <form  className={styles.upload}onSubmit={submitFile}>
       <input
         type="file"
         className={styles.fileInput}
         onChange={event => setFile(event.target.files[0])}
+        accept=".pdf"
       />
       <button type="submit" className={styles.uploadButton}>Upload</button>
     </form>
@@ -49,6 +53,9 @@ const FileUpload = () => {
       ) : (
         <div className={styles.outputContainer} dangerouslySetInnerHTML={{ __html: output }} />
       )}
+    </div>
+    <div className={styles.text}>
+    <pre>{deText}</pre>
     </div>
     </div>
   );

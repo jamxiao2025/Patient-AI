@@ -25,7 +25,7 @@ function Home() {
                 <h1 style={{ fontSize: '30px'}}>{quote}</h1>
             </div>
             <div className={styles.right}>
-            <button className={styles.back} onClick = {handleNav}>Take Me In</button>
+            <button className={styles.back} onClick = {handleNav}>let's get to work</button>
             </div>
         </div>
         </body> 

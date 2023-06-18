@@ -4,22 +4,32 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows:  auto;
     grid-template-areas:
-    ". . . "
+    ". note . "
     ". upload . "
     "spinner spinner spinner"
+    "text text text"
   
   }
+.bruh{
+    grid-area:  note;
+    justify-self: center;
+    align-self: center; 
 
+}
 .result{
  grid-area: spinner;
  justify-content: center;
 }
+.text{
+ grid-area: text;
+ justify-self: start;
+}
   .upload{
       grid-area: upload;
       justify-self: center;
-      align-self: center;
+      align-self: start;
   }
-  input{
+  .fileInput{
     padding: 10px 20px;
     background-color: #f1f1f1;
     color: #333;
@@ -29,18 +39,18 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  input:hover{
+  .fileInput:hover{
     background-color: #ddd;
   }
-  input:focus{
+  .fileInput:focus{
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
   }
-  input:active{
+  .fileInput:active{
     transform: translateY(1px);
 
   }
-  button {
+  .uploadButton {
     padding: 10px 20px;
     background-color: #f1f1f1;
     color: #333;
@@ -51,16 +61,16 @@
     transition: background-color 0.3s ease;
   }
   
-  button:hover {
+  .uploadButton:hover {
     background-color: #ddd;
   }
   
-  button:focus {
+  .uploadButton:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
   }
   
-  button:active {
+  .uploadButton:active {
     transform: translateY(1px);
   }
   

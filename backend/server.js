@@ -30,7 +30,7 @@ app.post('/upload',  (req, res) => {
         const html = await functions.diffChecker(text, deIdentifiedText.choices[0].text)
         console.log(html)
         //res.send({data: deIdentifiedText.choices[0].text});
-        res.send({data: html})
+        res.send({data: html, text: deIdentifiedText.choices[0].text})
       }
     });
   });

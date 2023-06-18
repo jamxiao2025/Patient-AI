@@ -111,6 +111,6 @@ h1{
 }
 .back:hover{
     color: #3FADDC;
-    transform: skewX(-10deg);
+    transform: translateX(30px);
 
 }
