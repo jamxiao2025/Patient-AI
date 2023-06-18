@@ -27,7 +27,10 @@ app.post('/upload',  (req, res) => {
         const text = await functions.pdfToText(req.file.path)
         const deIdentifiedText = await functions.gptDeIdentify(text)
         console.log(deIdentifiedText.choices[0].text)
-        res.send({data: deIdentifiedText.choices[0].text});
+        const html = await functions.diffChecker(text, deIdentifiedText.choices[0].text)
+        console.log(html)
+        //res.send({data: deIdentifiedText.choices[0].text});
+        res.send({data: html})
       }
     });
   });
